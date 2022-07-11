@@ -1,27 +1,28 @@
 @charset "utf-8";
 
-@font-face {
-    font-family: 'NanumSquareRound';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-*{box-sizing: border-box;
+*{
+	font-family: 'Noto Sans KR', sans-serif;
+	box-sizing: border-box;
 	list-style: none;
-text-decoration: none;
+	text-decoration: none;
 }
 
 ul {
 	padding: 0;
 }
 
-body{font-family: 'NanumSquareRound'; position: relative; font-weight: 500;
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		list-style-type: none;
-	}
+p {
+	margin: 0;
+}
+
+body{
+	position: relative; font-weight: 500;
+	margin: 0;
+	padding: 0; 
+	list-style: none;
+	list-style-type: none;
+}
+
 button{outline: none;}
 br{opacity: 0;}
 
@@ -32,12 +33,12 @@ button.move i{padding: 5px; font-size: 32px;}
 
 .header{width: 100%; height: 830px; z-index: 9999; position: relative; background: url(./toco_image/header_bg.png) no-repeat; background-repeat: round; padding-top: 30px;} /*헤더 배경 */
 .header .banner-wrap{height: 100%; max-width: 1400px; margin: 0 auto; position: relative;}
-.header .banner-wrap .img-wrap{position: absolute; right: 0; top: 9%;}
+.header .banner-wrap .img-wrap{position: absolute; right: 0; top: 10%;}
 .header .bannerText-wrap{color: #f8f8f8; position: absolute; top: 25%; word-break: normal;}
 .header .bannerText-wrap button{color: #f8f8f8; font-weight: 600; font-size: 20px; padding: 10px 25px; background: #ffffff2b; cursor: pointer; border: 1px solid;}
 .header .bannerText-wrap button:hover{background: transparent}
 .header .bannerText{padding-bottom: 80px;}
-.header .bannerText p:first-child{font-size: 50px; font-weight: 600; line-height: 60px;}
+.header .bannerText p:first-child{font-size: 50px; font-weight: 600; line-height: 60px; padding: 40px 0;}
 .header .bannerText p:last-child {font-weight: 500; line-height: 20px;}
 .header .bannerText p:last-child span:nth-child(3){display: block;}
 .wrapper{max-width:100%; position: relative;}
@@ -63,7 +64,7 @@ button.move i{padding: 5px; font-size: 32px;}
 	width: 100%;
 	transform: translate(-50%, -50%);
 	font-size: 20px;
-	font-family: 'ypseo';
+	/* font-family: 'ypseo'; */
 	text-align: center;
 	color: #ffffff;
  }
@@ -242,11 +243,11 @@ button.move i{padding: 5px; font-size: 32px;}
 .clients-img-wrap ul li .sm-img{max-width: 90%;}
 .clients-img-wrap ul li .lg-img{max-width: 110%;}
 .clients-img-wrap ul li .lg-img-width{width: 90%;}
-.clients-img-wrap ul li p{font-size: 16px; padding-top: 15px; word-break: break-all}
+.clients-img-wrap ul li p{font-size: 16px; padding-top: 15px; word-break: break-all;}
 .clients-img-wrap .load{background: transparent; cursor: pointer; border: none; display: none;}
 .clients-img-wrap .load i{font-size: 80px; color:#04088a;}
 
-/* -------------------지도 -----------------*/			
+/* ------------------- 지도 ------------------- */		
 
 .indexKakaoMap{
 	width:65%;
@@ -284,20 +285,19 @@ footer{
 }
 .footer_wrap{								
 	background-image:url("./toco_image/footer2.png");
-	background-size:cover;				
-}
-.footer_wrap{				
+	background-size:cover;								
 	margin:0 auto;
-	padding:80px 40px;
+	padding:80px 50px;
 	display:flex;
 }			
 .footer_wrap > div{
-	margin-left:250px;
+	margin-left:180px;
 }
 .footer_wrap .footer_content{
-	margin-left:3%;
+	margin-left:5%;
 	width:85%;
 	display:inline-block;
+	word-break:keep-all;
 }
 .footer_wrap .footer_content_wht{
 	color:white;
@@ -316,7 +316,13 @@ footer{
 .footer_wrap .footer_info p{
 	margin:0;
 	width: calc(100% / 2);
-}	
+}
+.footer_wrap .footer_info :nth-child(6){
+	width: 100%;
+}
+.footer_wrap .footer_info pre{
+	margin: 0;
+}
 .footer_wrap .copyright{
 	color:#828282;				
 }
@@ -325,10 +331,12 @@ footer{
 }
 
 
+
 /*동적 화면 크기 조절*/
 @media screen and (max-width:1500px) {
 	.header .bannerText-wrap{ padding-left: 2%;}
-	.header .banner-wrap .img-wrap{padding-right: 2%;}
+	.header .banner-wrap .img-wrap{padding-right: 2%; }
+	
 	/* 명환씨파트 */
 	.cus_wrap{height: 60vw;}
 	.cus_wrap .ecoce-bot {top: 5%; width: 53%; right: 2%;}
@@ -369,7 +377,7 @@ footer{
 	/* 인홍씨파트 */
 	.header .bannerText p:first-child{font-size: 45px;}
 	.header .banner-wrap .img-wrap{top: 11%;}
-	.header .banner-wrap .img-wrap img{padding-top: 80px;}
+	.header .banner-wrap .img-wrap img{width: 560px;}
 	.header .bannerText p:last-child span:last-child{display: block;}
 	.header .bannerText p:last-child span:nth-child(2),
 	.header .bannerText p:last-child span:last-child span:last-child {display: block;}
@@ -408,6 +416,10 @@ footer{
 	.indexKakaoMap{
 		height:650px;
 	}
+	.footer_wrap .footer_content{
+		word-break: keep-all;
+	}
+	
 }	
 
 
@@ -417,7 +429,7 @@ footer{
 	.header .bannerText{padding-bottom: 50px;}
 	.header .bannerText p:first-child{font-size: 36px; line-height: 45px; padding-top: 60px;}
 	.header .bannerText-wrap{top: 45%;}
-	.header .banner-wrap .img-wrap{left: 50%; right: 0; top: 0; transform: translateX(-50%); width: 500px;}
+	.header .banner-wrap .img-wrap{left: 50%; right: 0; top: 9%; transform: translateX(-50%); width: 500px;}
 	.header .banner-wrap .img-wrap img{width: 100%;}
 	.wrapper .top_wrap{display: inline;}
 	.wrapper .top_wrap>a img{ position: unset;}
@@ -472,6 +484,7 @@ footer{
 	.footer_wrap .footer_content_wht,
 	.footer_wrap .copyright{
 		font-size:16px;
+		word-break: keep-all;
 	}
 	.footer_wrap .footer_info_wrap .footer_info{
 		font-size:14px;
